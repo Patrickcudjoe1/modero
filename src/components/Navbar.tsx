@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="w-full px-4 md:px-8 py-4 md:py-6 flex items-center justify-between relative bg-gray-50 z-50 lg:sticky lg:top-0">
+      <header className="w-full px-4 md:px-8 py-4 md:py-6 flex items-center justify-between relative bg-white z-50 lg:sticky lg:top-0">
         {/* Mobile Navigation */}
         <div className="flex items-center justify-between w-full lg:hidden">
           {/* Hamburger menu */}
