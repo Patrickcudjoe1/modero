@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -36,6 +36,32 @@ const mobileProducts = [
 ];
 
 export default function MobileHero() {
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the scroll position and document height
+      const scrollY = window.scrollY || window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Calculate how close we are to the bottom (footer area)
+      // Hide button when we're within 300px of the bottom
+      const distanceFromBottom = documentHeight - (scrollY + windowHeight);
+      setIsButtonVisible(distanceFromBottom > 300);
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="lg:hidden w-full px-4 py-6 bg-gray-50 min-h-screen pt-4">
       {/* Category Navigation */}
@@ -105,7 +131,7 @@ export default function MobileHero() {
       </div>
 
       {/* Go To Shop Button */}
-      <div className="fixed bottom-20 left-4 right-4 lg:hidden z-40">
+      <div className={`fixed bottom-20 left-4 right-4 lg:hidden z-40 transition-opacity duration-300 ${isButtonVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <Link
           href="/products"
           className="w-full py-4 bg-gray-200 text-black text-sm font-normal rounded-lg flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
