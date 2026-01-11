@@ -105,7 +105,7 @@ export default function MobileHero() {
       </div>
 
       {/* Go To Shop Button */}
-      <div className="fixed bottom-6 left-4 right-4 lg:hidden">
+      <div className="fixed bottom-20 left-4 right-4 lg:hidden z-40">
         <Link
           href="/products"
           className="w-full py-4 bg-gray-200 text-black text-sm font-normal rounded-lg flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors"
