@@ -6,8 +6,6 @@ import Image from 'next/image';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -16,24 +14,20 @@ export default function Navbar() {
       if (!target.closest('.mobile-menu') && !target.closest('.hamburger-button')) {
         setIsMenuOpen(false);
       }
-      if (!target.closest('.profile-menu') && !target.closest('.profile-button')) {
-        setIsProfileOpen(false);
-      }
-      if (!target.closest('.favorites-menu') && !target.closest('.favorites-button')) {
-        setIsFavoritesOpen(false);
-      }
     };
 
-    if (isMenuOpen || isProfileOpen || isFavoritesOpen) {
+    if (isMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.body.style.overflow = 'auto';
     };
-  }, [isMenuOpen, isProfileOpen, isFavoritesOpen]);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -81,42 +75,16 @@ export default function Navbar() {
               <path d="M9 2v5h6V2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Link>
-          <div className="relative">
-            <button 
-              className="profile-button w-10 h-10 rounded-full bg-black flex items-center justify-center hover:opacity-80 active:scale-95 transition-all" 
-              aria-label="Profile"
-              onClick={() => setIsProfileOpen(!isProfileOpen)}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="7" r="4" stroke="white" strokeWidth="2"/>
-              </svg>
-            </button>
-            {isProfileOpen && (
-              <div className="profile-menu absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 opacity-100 translate-y-0 transition-all duration-200 ease-out">
-                <Link href="/login" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Sign In
-                </Link>
-                <Link href="/signup" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Sign Up
-                </Link>
-                <hr className="my-1 border-gray-200" />
-                <Link href="/profile" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  My Profile
-                </Link>
-                <Link href="/orders" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Orders
-                </Link>
-                <Link href="/settings" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Settings
-                </Link>
-                <hr className="my-1 border-gray-200" />
-                <button className="w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Sign Out
-                </button>
-              </div>
-            )}
-          </div>
+          <Link 
+            href="/login" 
+            className="profile-button w-10 h-10 rounded-full bg-black flex items-center justify-center hover:opacity-80 active:scale-95 transition-all" 
+            aria-label="Profile"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="white" strokeWidth="2"/>
+            </svg>
+          </Link>
         </div>
       </div>
 
@@ -147,34 +115,15 @@ export default function Navbar() {
 
         {/* Right side - Icons */}
         <div className="flex items-center gap-3">
-          <div className="relative">
-            <button 
-              className="favorites-button w-10 h-10 rounded-full bg-black flex items-center justify-center hover:opacity-80 active:scale-95 transition-all" 
-              aria-label="Favorites"
-              onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            {isFavoritesOpen && (
-              <div className="favorites-menu absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 opacity-100 translate-y-0 transition-all duration-200 ease-out">
-                <div className="px-4 py-3 border-b border-gray-200">
-                  <h3 className="text-sm font-semibold text-black">Favorites</h3>
-                </div>
-                <div className="max-h-64 overflow-y-auto">
-                  <div className="px-4 py-8 text-center text-sm text-gray-500">
-                    No favorites yet
-                  </div>
-                </div>
-                <div className="px-4 py-2 border-t border-gray-200">
-                  <Link href="/favorites" className="block text-center text-sm text-black hover:bg-gray-100 py-2 rounded transition-colors" onClick={() => setIsFavoritesOpen(false)}>
-                    View All Favorites
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
+          <Link 
+            href="/login" 
+            className="favorites-button w-10 h-10 rounded-full bg-black flex items-center justify-center hover:opacity-80 active:scale-95 transition-all" 
+            aria-label="Favorites"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
           <Link href="/cart" className="px-4 h-10 rounded-full bg-black text-white text-sm font-normal flex items-center gap-2 hover:opacity-80 active:scale-95 transition-all">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 2L4 7v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5H9z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -182,42 +131,16 @@ export default function Navbar() {
             </svg>
             Cart
           </Link>
-          <div className="relative">
-            <button 
-              className="profile-button w-10 h-10 rounded-full bg-black flex items-center justify-center hover:opacity-80 active:scale-95 transition-all" 
-              aria-label="Profile"
-              onClick={() => setIsProfileOpen(!isProfileOpen)}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="7" r="4" stroke="white" strokeWidth="2"/>
-              </svg>
-            </button>
-            {isProfileOpen && (
-              <div className="profile-menu absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 opacity-100 translate-y-0 transition-all duration-200 ease-out">
-                <Link href="/login" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Sign In
-                </Link>
-                <Link href="/signup" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Sign Up
-                </Link>
-                <hr className="my-1 border-gray-200" />
-                <Link href="/profile" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  My Profile
-                </Link>
-                <Link href="/orders" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Orders
-                </Link>
-                <Link href="/settings" className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Settings
-                </Link>
-                <hr className="my-1 border-gray-200" />
-                <button className="w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors" onClick={() => setIsProfileOpen(false)}>
-                  Sign Out
-                </button>
-              </div>
-            )}
-          </div>
+          <Link 
+            href="/login" 
+            className="profile-button w-10 h-10 rounded-full bg-black flex items-center justify-center hover:opacity-80 active:scale-95 transition-all" 
+            aria-label="Profile"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="white" strokeWidth="2"/>
+            </svg>
+          </Link>
         </div>
       </div>
     </header>
