@@ -92,8 +92,8 @@ export default function Home() {
         <FashionApproach />
       </div>
       
-      {/* Footer - Desktop only */}
-      <div className="hidden lg:block">
+      {/* Footer */}
+      <div>
         <Footer />
       </div>
     </main>
