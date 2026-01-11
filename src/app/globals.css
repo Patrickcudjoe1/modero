@@ -80,3 +80,20 @@ main {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.logo-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

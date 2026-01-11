@@ -56,7 +56,7 @@ export default function Navbar() {
 
         {/* Center - Logo */}
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-          <div className="w-[150px] h-[150px] relative">
+          <div className="w-[150px] h-[150px] relative logo-container">
             <Image
               src="/logo1.png"
               alt="Logo"
@@ -102,7 +102,7 @@ export default function Navbar() {
 
         {/* Center - Logo */}
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-          <div className="w-50 h-50 relative">
+          <div className="w-50 h-50 relative logo-container">
             <Image
               src="/logo1.png"
               alt="Logo"
