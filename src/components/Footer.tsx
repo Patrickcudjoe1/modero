@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="w-full bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 pb-28 lg:pb-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 pb-32 lg:pb-6">
         {/* Newsletter Section */}
         <div className="mb-6 pb-6 border-b border-gray-200">
           <h3 className="text-xs tracking-widest uppercase font-light mb-3">Join The Conversation</h3>
