@@ -48,7 +48,7 @@ const products: Product[] = [
 export default function NewThisWeek() {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   // Intersection Observer to detect when section enters viewport
   useEffect(() => {
@@ -105,7 +105,7 @@ export default function NewThisWeek() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-baseline gap-2">
-            <h2 className="text-4xl md:text-5xl font-serif font-normal uppercase tracking-wide text-transparent" style={{ WebkitTextStroke: '1px black', textStroke: '1px black' }}>
+            <h2 className="text-4xl md:text-5xl font-serif font-normal uppercase tracking-wide text-transparent" style={{ WebkitTextStroke: '1px black' }}>
               NEW THIS WEEK
             </h2>
             <span className="text-2xl md:text-3xl font-bold text-blue-600 ml-2">

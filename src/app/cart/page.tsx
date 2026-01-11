@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 
 export default function CartPage() {
   const [activeTab, setActiveTab] = useState('shopping-bag');
-  const [quantities, setQuantities] = useState({
+  const [quantities, setQuantities] = useState<Record<number, number>>({
     1: 1,
     2: 1
   });
