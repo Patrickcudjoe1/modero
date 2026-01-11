@@ -53,8 +53,17 @@ export default function Sidebar() {
   return (
     <aside className="fixed left-8 top-32 flex flex-col gap-8 z-10 hidden lg:flex">
       {/* Categories */}
-     
-      
+      <div className="flex flex-col gap-6">
+        <a href="#" className="text-sm font-normal text-black uppercase tracking-wider hover:opacity-70 transition-opacity">
+          MEN
+        </a>
+        <a href="#" className="text-sm font-normal text-black uppercase tracking-wider hover:opacity-70 transition-opacity">
+          WOMEN
+        </a>
+        <a href="#" className="text-sm font-normal text-black uppercase tracking-wider hover:opacity-70 transition-opacity">
+          KIDS
+        </a>
+      </div>
 
       {/* Search Bar */}
       <div className="relative mt-4">

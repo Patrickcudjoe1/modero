@@ -36,7 +36,7 @@ const mobileProducts = [
 ];
 
 export default function MobileHero() {
-  const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,9 +46,14 @@ export default function MobileHero() {
       const documentHeight = document.documentElement.scrollHeight;
       
       // Calculate how close we are to the bottom (footer area)
-      // Hide button when we're within 300px of the bottom
       const distanceFromBottom = documentHeight - (scrollY + windowHeight);
-      setIsButtonVisible(distanceFromBottom > 300);
+      
+      // Show button when scrolled down more than 100px
+      // Hide button when within 300px of the bottom (footer area)
+      const hasScrolled = scrollY > 100;
+      const isNearFooter = distanceFromBottom < 300;
+      
+      setIsButtonVisible(hasScrolled && !isNearFooter);
     };
 
     // Check initial scroll position
