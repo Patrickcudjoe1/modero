@@ -87,8 +87,8 @@ export default function Home() {
         <Collections />
       </div>
       
-      {/* Fashion Approach Section - Desktop only */}
-      <div className="hidden lg:block">
+      {/* Fashion Approach Section */}
+      <div>
         <FashionApproach />
       </div>
       

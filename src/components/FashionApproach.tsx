@@ -87,12 +87,12 @@ export default function FashionApproach() {
           </p>
         </div>
 
-        {/* Image Panels - Horizontal Row with Staggered Heights */}
-        <div className="flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center items-end">
+        {/* Image Panels - Grid on mobile, Horizontal Row on desktop */}
+        <div className="grid grid-cols-2 gap-4 md:flex md:flex-row md:gap-6 lg:gap-8 md:justify-center md:items-end">
           {imagePanels.map((panel) => (
             <div 
               key={panel.id}
-              className={`relative bg-white flex-1 max-w-[300px] ${panel.height} ${panel.alignment} overflow-hidden group`}
+              className={`relative bg-white aspect-square md:flex-1 md:max-w-[300px] md:h-[500px] lg:h-[550px] ${panel.alignment} overflow-hidden group`}
             >
               <img
                 src={panel.src}
