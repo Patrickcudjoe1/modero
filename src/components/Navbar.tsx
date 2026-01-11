@@ -196,58 +196,7 @@ export default function Navbar() {
               >
                 New This Week
               </Link>
-              <hr className="my-2 border-gray-200" />
-              <Link 
-                href="/login" 
-                className="block px-4 py-3 text-base text-black hover:bg-gray-100 transition-colors"
-                onClick={closeMenu}
-              >
-                Sign In
-              </Link>
-              <Link 
-                href="/signup" 
-                className="block px-4 py-3 text-base text-black hover:bg-gray-100 transition-colors"
-                onClick={closeMenu}
-              >
-                Sign Up
-              </Link>
-              <hr className="my-2 border-gray-200" />
-              <Link 
-                href="/profile" 
-                className="block px-4 py-3 text-base text-black hover:bg-gray-100 transition-colors"
-                onClick={closeMenu}
-              >
-                My Profile
-              </Link>
-              <Link 
-                href="/orders" 
-                className="block px-4 py-3 text-base text-black hover:bg-gray-100 transition-colors"
-                onClick={closeMenu}
-              >
-                Orders
-              </Link>
-              <Link 
-                href="/favorites" 
-                className="block px-4 py-3 text-base text-black hover:bg-gray-100 transition-colors"
-                onClick={closeMenu}
-              >
-                Favorites
-              </Link>
-              <Link 
-                href="/settings" 
-                className="block px-4 py-3 text-base text-black hover:bg-gray-100 transition-colors"
-                onClick={closeMenu}
-              >
-                Settings
-              </Link>
             </nav>
-
-            {/* Menu Footer */}
-            <div className="p-4 border-t border-gray-200">
-              <button className="w-full px-4 py-3 bg-black text-white text-sm font-normal rounded-lg hover:opacity-80 transition-opacity">
-                Sign Out
-              </button>
-            </div>
           </div>
         </div>
       </>
