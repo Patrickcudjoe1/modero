@@ -6,7 +6,7 @@ import React from 'react';
 const productImages = [
   {
     id: 1,
-    src: '/SOG_90-1.jpg',
+    src: '/MOD-48.jpg',
     alt: 'Product 1'
   },
   {
@@ -31,7 +31,7 @@ const productImages = [
   },
   {
     id: 6,
-    src: '/SOG600.jpg',
+    src: '/MOD-1.jpg',
     alt: 'Product 6'
   },
   {

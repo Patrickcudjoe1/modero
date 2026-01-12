@@ -39,28 +39,28 @@ export default function FashionApproach() {
   const imagePanels = [
     {
       id: 1,
-      src: '/SOG_90-1.jpg',
+      src: '/MOD-35.jpg',
       alt: 'Fashion model in gray coat',
       height: 'h-[500px]',
       alignment: 'self-start'
     },
     {
       id: 2,
-      src: '/ddd.jpg',
+      src: '/MOD-45.jpg',
       alt: 'Fashion model in rust jacket',
       height: 'h-[550px]',
       alignment: 'self-end'
     },
     {
       id: 3,
-      src: '/SOG_90-1.jpg',
+      src: '/MOD-41.jpg',
       alt: 'Fashion detail - cream trousers',
       height: 'h-[480px]',
       alignment: 'self-start'
     },
     {
       id: 4,
-      src: '/ddd.jpg',
+      src: '/MOD-23.jpg',
       alt: 'Fashion flat lay - white sweatshirt',
       height: 'h-[520px]',
       alignment: 'self-center'

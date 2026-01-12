@@ -14,14 +14,14 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    image: '/SOG_90-1.jpg',
+    image: '/MOD-5.jpg',
     category: 'V-Neck T-Shirt',
     name: 'Embroidered Seersucker Shirt',
     price: '$99'
   },
   {
     id: 2,
-    image: '/ddd.jpg',
+    image: '/MOD-7.jpg',
     category: 'Cotton T Shirt',
     name: 'Basic Slim Fit T-Shirt',
     price: '$99',
@@ -29,7 +29,7 @@ const products: Product[] = [
   },
   {
     id: 3,
-    image: '/SOG_90-1.jpg',
+    image: '/MOD-9.jpg',
     category: 'Henley T-Shirt',
     name: 'Blurred Print T-Shirt',
     price: '$99',
@@ -37,7 +37,7 @@ const products: Product[] = [
   },
   {
     id: 4,
-    image: '/ddd.jpg',
+    image: '/MOD-38.jpg',
     category: 'Crewneck T-Shirt',
     name: 'Full Sleeve Zipper',
     price: '$99',

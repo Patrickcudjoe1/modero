@@ -95,7 +95,7 @@ export default function Sidebar() {
           NEW<br />COLLECTION
         </h1>
         <p className="text-lg text-gray-600 font-normal">
-          Summer 2024
+          Executive wears
         </p>
       </div>
       
@@ -111,7 +111,7 @@ export default function Sidebar() {
           NEW<br />COLLECTION
         </h1>
         <p className="text-sm text-gray-600 font-normal">
-          Summer 2024
+          classic wear
         </p>
       </div>
     </aside>

@@ -14,14 +14,14 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    image: '/SOG_90-1.jpg',
+    image: '/MOD-28.jpg',
     category: 'Cotton T Shirt',
     name: 'Basic Heavy Weight T-Shirt',
     price: '$ 199'
   },
   {
     id: 2,
-    image: '/ddd.jpg',
+    image: '/MOD-29.jpg',
     category: 'Cotton jeans',
     name: 'Soft Wash Straight Fit Jeans',
     price: '$ 199',
@@ -29,7 +29,7 @@ const products: Product[] = [
   },
   {
     id: 3,
-    image: '/SOG_90-1.jpg',
+    image: '/MOD-30.jpg',
     category: 'Cotton T Shirt',
     name: 'Basic Heavy Weight T-Shirt',
     price: '$ 199',
@@ -37,14 +37,14 @@ const products: Product[] = [
   },
   {
     id: 4,
-    image: '/ddd.jpg',
+    image: '/MOD-43.jpg',
     category: 'Cotton T Shirt',
     name: 'Basic Heavy Weight T-Shirt',
     price: '$ 199'
   },
   {
     id: 5,
-    image: '/SOG_90-1.jpg',
+    image: '/MOD-17.jpg',
     category: 'Cotton jeans',
     name: 'Soft Wash Straight Fit Jeans',
     price: '$ 199',
@@ -52,7 +52,7 @@ const products: Product[] = [
   },
   {
     id: 6,
-    image: '/ddd.jpg',
+    image: '/MOD-30.jpg',
     category: 'Cotton T Shirt',
     name: 'Basic Heavy Weight T-Shirt',
     price: '$ 199',
